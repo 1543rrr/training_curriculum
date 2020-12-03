@@ -8,6 +8,9 @@
   <% end %>
 </div>
 <div>
+<div class=weekday>
+  <% days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans, wday: wdaysから値を取り出す記述} %>
+</div>  
   <div class=calendar>
     <% @week_days.each do |day| %>
       <div class='item'>
@@ -25,3 +28,4 @@
     <% end %>
   </div>
 </div>
+
