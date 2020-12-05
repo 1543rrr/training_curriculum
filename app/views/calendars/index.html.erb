@@ -5,39 +5,22 @@
     <%= f.label :予定を入力, class: 'lavel' %>
     <%= f.text_field :plan, class: 'text-input' %>
     <%= f.submit '保存' %>
-
+<% end %>
+<div class=calendar>
+  <% @week_days.each do |day| %>
+    <div class='item'>
+      <div class='date'>
+        <%= day[:month] %>/<%= day[:date] %>
+      </div>
+      <ul class='content'>
+      <% if day[:plans].length != 0 %>
+        <% day[:plans].each do |plan| %>
+          <li class='plan-list'>・<%= plan %></li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
 </div>
-<div>
-<div class=weekday>
-  <% days = { month: (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans, wday: wdaysから値を取り出す記述} %>
-</div>  
-  <div class=calendar>
-
-    <% @week_days.each do |day| %>
-<% end %>
-</div>    
-<div class='item'>
-</div>
-<div class='date'>
-    <% day[:month] %>/<% day[:date] %>
-</div>
-<ul class='content'>
-    <% if day[:plans].length != 0 %>
-    
-      <% day[:plans].each do |plan| %>
-        <li class='plan-list'>・<%= plan %></li>
-      <% end %>
-    <% end %>
-
-  </div>
-</div>
-
-
-</ul>
-
-
-</div>
-
 
 

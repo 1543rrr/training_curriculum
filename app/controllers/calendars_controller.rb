@@ -15,7 +15,7 @@ class CalendarsController < ApplicationController
   private
 
   def plan_params
-    params.require(:calendars).permit(:date, :plan)
+    params.require(:plan).permit(:date, :plan)
   end
 
   def get_week
@@ -25,10 +25,10 @@ class CalendarsController < ApplicationController
     @todays_date = Date.today
     # 例)　今日が2月1日の場合・・・ Date.today.day => 1日
     
-    <%x>require "date"
-    d = Date.today
-    p d.strftime("現在時刻は%Y年%m月%d日です。")
-    </%x>
+    # def today
+    #  d = Date.today
+    #  p d.strftime("現在時刻は%Y年%m月%d日です。")
+    # end
 
     @week_days = []
 
